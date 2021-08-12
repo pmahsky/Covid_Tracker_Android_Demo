@@ -1,0 +1,30 @@
+ext {
+    compileSDK = 30
+    targetSDK = 30
+    lifecycleVersion = '2.1.0'
+
+    deps = [
+
+            //Network setup
+            moshi                 : 'com.squareup.retrofit2:converter-moshi:2.6.0',
+            okHttp3               : 'com.squareup.okhttp3:okhttp:4.1.0',
+            retrofit2             : 'com.squareup.retrofit2:retrofit:2.6.1',
+            gson                  : 'com.squareup.retrofit2:converter-gson:2.6.1',
+            loggingInterceptor    : 'com.squareup.okhttp3:logging-interceptor:4.1.0',
+
+            //ui
+            appCompat             : 'androidx.appcompat:appcompat:1.2.0',
+            constraintLayout      : 'androidx.constraintlayout:constraintlayout:2.0.1',
+            material              : 'com.google.android.material:material:1.1.0-alpha09',
+
+            androidxCollection    : 'androidx.collection:collection:1.1.0',
+            androidxViewPager     : 'androidx.viewpager2:viewpager2:1.1.0-alpha01',
+
+            //lifecycle
+            lifeCycleViewModel    : "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0",
+            lifeCycleRuntime      : 'androidx.lifecycle:lifecycle-runtime:2.2.0',
+            lifeCycleExtension    : 'androidx.lifecycle:lifecycle-extensions:2.2.0',
+            legacySupport         : 'androidx.legacy:legacy-support-v4:1.0.0',
+            lifeCycleCompiler     : 'androidx.lifecycle:lifecycle-compiler:2.2.0'
+    ]
+}

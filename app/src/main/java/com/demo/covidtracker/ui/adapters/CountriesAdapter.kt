@@ -17,7 +17,7 @@ class CountriesAdapter(private val listener: CountryItemListener) :
         fun onClickedCountry(countryId: Int)
     }
 
-    private val items = ArrayList<CountryEntity>()
+    val items = ArrayList<CountryEntity>()
 
     fun setItems(items: ArrayList<CountryEntity>) {
         this.items.clear()

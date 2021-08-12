@@ -1,14 +1,13 @@
 package com.demo.covidtracker.ui.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.demo.covidtracker.domain.repository.CovidRepository
+import com.demo.covidtracker.domain.usecases.GetAllCountriesDataUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class CountriesViewModel @Inject constructor(
-    repository: CovidRepository
+    getAllCountriesDataUseCase: GetAllCountriesDataUseCase
 ) : ViewModel() {
-
-    val countries = repository.getAllCountriesData("", "")
+    val countries = getAllCountriesDataUseCase.invoke()
 }

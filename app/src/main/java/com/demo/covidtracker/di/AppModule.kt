@@ -6,6 +6,7 @@ import com.demo.covidtracker.domain.local.AppDatabase
 import com.demo.covidtracker.domain.local.CountryDataDao
 import com.demo.covidtracker.domain.remote.CountriesDataRemoteDataSource
 import com.demo.covidtracker.domain.repository.CovidRepository
+import com.demo.covidtracker.domain.usecases.GetAllCountriesDataUseCase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -72,5 +73,12 @@ object AppModule {
         remoteDataSource: CountriesDataRemoteDataSource,
         localDataSource: CountryDataDao
     ) = CovidRepository(remoteDataSource, localDataSource)
+
+    @Singleton
+    @Provides
+    fun provideGetAllCountriesDataUsecase(
+        remoteDataSource: CountriesDataRemoteDataSource,
+        localDataSource: CountryDataDao
+    ) = GetAllCountriesDataUseCase(provideRepository(remoteDataSource, localDataSource))
 
 }

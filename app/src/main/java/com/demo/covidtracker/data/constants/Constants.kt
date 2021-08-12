@@ -1,4 +1,4 @@
-package com.demo.covidtracker.utils
+package com.demo.covidtracker.data.constants
 
 class Constants {
     companion object {

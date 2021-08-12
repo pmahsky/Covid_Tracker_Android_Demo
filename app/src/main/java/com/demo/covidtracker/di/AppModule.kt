@@ -1,11 +1,11 @@
 package com.demo.covidtracker.di
 
 import android.content.Context
+import com.demo.covidtracker.data.implementation.CovidRepositoryImpl
 import com.demo.covidtracker.data.services.networkServices.CovidApiService
 import com.demo.covidtracker.domain.local.AppDatabase
 import com.demo.covidtracker.domain.local.CountryDataDao
 import com.demo.covidtracker.domain.remote.CountriesDataRemoteDataSource
-import com.demo.covidtracker.domain.repository.CovidRepository
 import com.demo.covidtracker.domain.usecases.GetAllCountriesDataUseCase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -72,7 +72,7 @@ object AppModule {
     fun provideRepository(
         remoteDataSource: CountriesDataRemoteDataSource,
         localDataSource: CountryDataDao
-    ) = CovidRepository(remoteDataSource, localDataSource)
+    ) = CovidRepositoryImpl(remoteDataSource, localDataSource)
 
     @Singleton
     @Provides
